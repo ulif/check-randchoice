@@ -1,3 +1,5 @@
+## DO NOT USE WITH PYTHON VERSIONS OTHER THAN 2.7.x
+
 import random
 import struct
 from binascii import unhexlify, hexlify
