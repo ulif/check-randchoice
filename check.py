@@ -32,6 +32,18 @@ fake_random = FakeURandom()
 random._urandom = fake_random.urandom
 
 
+def inject_random_num(num):
+    """Fake urandom results.
+
+    Turn integer `num` into sequence of bytes, which will be output by patched
+    urandom on upcoming requests.
+    """
+    fake_random = FakeURandom()
+    random._urandom = fake_random.urandom
+    fake_random.byte_vals = num_to_bytes(num)
+    return fake_random
+
+
 check1 = random.SystemRandom().random()
 print("check1 %s" % check1)
 assert check1 == 0.0
@@ -80,7 +92,7 @@ def part(t, t0, t1, r_min=0, r_max=2**56):
     if r_max == r_min + 1:
         return r_min, r_max
     r_new = r_min + ((r_max - r_min) / 2)
-    fake_random.bits = num_to_bytes(r_new)
+    inject_random_num(r_new)
     tn = random.SystemRandom().choice([1, 2, 3])
     if tn > t0 and tn > t:
         return part(t, t0, tn, r_min, r_new)
