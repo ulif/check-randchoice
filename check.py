@@ -1,8 +1,11 @@
-## DO NOT USE WITH PYTHON VERSIONS OTHER THAN 2.7.x
-
 import random
 import struct
+import sys
 from binascii import unhexlify, hexlify
+
+
+# This script checks Python2.7 only!
+assert sys.version_info.major, sys.version_info.minor == (2, 7)
 
 
 def num_to_bytes(t, bytes_cnt=7):
