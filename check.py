@@ -1,7 +1,6 @@
 import random
 import struct
 import sys
-from binascii import unhexlify, hexlify
 
 
 # This script checks Python2.7 only!
@@ -101,6 +100,7 @@ def part(t, t0, t1, r_min=0, r_max=2**56):
         return part(t, t0, tn, r_min, r_new)
     else:
         return part(t, tn, t1, r_new, r_max)
+
 
 print(part(1, 1, 3, 0, 2**56))
 print(part(2, 1, 3, 0, 2**56))
