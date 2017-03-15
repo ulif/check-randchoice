@@ -7,6 +7,10 @@ import sys
 assert sys.version_info.major, sys.version_info.minor == (2, 7)
 
 
+URAND_MIN = 0            # minimum 8 byte value
+URAND_MAX = 2 ** 56 - 1  # maximum 8 byte value
+
+
 def num_to_bytes(t, bytes_cnt=7):
     """Turn number t into a list of `bytes_cnt` bytes.
 
@@ -46,7 +50,7 @@ def inject_random_num(num):
     return fake_random
 
 
-def part(t, t0, t1, r_min=0, r_max=2**56-1):
+def part(t, t0, t1, r_min=URAND_MIN, r_max=URAND_MAX):
     if r_max == r_min + 1:
         return r_min, r_max
     r_new = r_min + ((r_max - r_min) / 2)
