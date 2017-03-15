@@ -46,7 +46,7 @@ def inject_random_num(num):
     return fake_random
 
 
-def part(t, t0, t1, r_min=0, r_max=2**56):
+def part(t, t0, t1, r_min=0, r_max=2**56-1):
     if r_max == r_min + 1:
         return r_min, r_max
     r_new = r_min + ((r_max - r_min) / 2)
