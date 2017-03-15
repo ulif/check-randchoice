@@ -7,6 +7,8 @@ import sys
 assert sys.version_info.major, sys.version_info.minor == (2, 7)
 
 
+# The python 2.7.x SystemRandom.choice() function asks for 8 bytes from
+# /dev/urandom
 URAND_MIN = 0            # minimum 8 byte value
 URAND_MAX = 2 ** 56 - 1  # maximum 8 byte value
 
