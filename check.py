@@ -58,8 +58,8 @@ def part(t, t0, t1, r_min=0, r_max=2**56-1):
         return part(t, tn, t1, r_new, r_max)
 
 
-print(part(1, 1, 3, 0, 2**56))
-print(part(2, 1, 3, 0, 2**56))
+print(part(1, 1, 3))
+print(part(2, 1, 3))
 
 print("range '1': ", 24019198012642647 + 1)
 print("range '2': ", 48038396025285287 - 24019198012642647)
