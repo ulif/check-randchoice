@@ -56,7 +56,7 @@ def part(t, t0, t1, r_min=URAND_MIN, r_max=URAND_MAX, dist_max=3):
     if r_max == r_min + 1:
         return r_min, r_max
     r_new = r_min + ((r_max - r_min) / 2)
-    inject_random_num(r_new)
+    fake_random.bytes_list = num_to_bytes(r_new)
     tn = random.SystemRandom().choice(range(1, dist_max + 1))
     if tn > t0 and tn > t:
         return part(t, t0, tn, r_min, r_new)
