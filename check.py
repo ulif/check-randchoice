@@ -68,8 +68,14 @@ def urand_max(t, t0, t1, r_min=URAND_MIN, r_max=URAND_MAX, dist_max=3):
         return urand_max(t, tn, t1, r_new, r_max)
 
 
+def partition(t1):
+    return [urand_max(x, 1, 3) for x in range(1, t1)]
+
+
 print(urand_max(1, 1, 3))
 print(urand_max(2, 1, 3))
+
+print(partition(3))
 
 print("range '1': ", 24019198012642647 + 1)
 print("range '2': ", 48038396025285287 - 24019198012642647)
