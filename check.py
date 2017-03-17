@@ -53,6 +53,10 @@ def inject_random_num(num):
 
 
 def urand_max(t, t0, t1, r_min=URAND_MIN, r_max=URAND_MAX, dist_max=3):
+    """Get max urandom number, for which `SystemRandom.choice()` returns `t`
+
+    given, there is a choice from all integers in [`t0`...`t1`].
+    """
     if r_max == r_min + 1:
         return r_min
     r_new = r_min + ((r_max - r_min) / 2)
