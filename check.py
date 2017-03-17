@@ -52,20 +52,20 @@ def inject_random_num(num):
     return fake_random
 
 
-def part(t, t0, t1, r_min=URAND_MIN, r_max=URAND_MAX, dist_max=3):
+def urand_max(t, t0, t1, r_min=URAND_MIN, r_max=URAND_MAX, dist_max=3):
     if r_max == r_min + 1:
         return r_min
     r_new = r_min + ((r_max - r_min) / 2)
     fake_random.bytes_list = num_to_bytes(r_new)
     tn = random.SystemRandom().choice(range(1, dist_max + 1))
     if tn > t0 and tn > t:
-        return part(t, t0, tn, r_min, r_new)
+        return urand_max(t, t0, tn, r_min, r_new)
     else:
-        return part(t, tn, t1, r_new, r_max)
+        return urand_max(t, tn, t1, r_new, r_max)
 
 
-print(part(1, 1, 3))
-print(part(2, 1, 3))
+print(urand_max(1, 1, 3))
+print(urand_max(2, 1, 3))
 
 print("range '1': ", 24019198012642647 + 1)
 print("range '2': ", 48038396025285287 - 24019198012642647)
