@@ -68,10 +68,10 @@ def urand_max(t, t0, t1, r_min=URAND_MIN, r_max=URAND_MAX, dist_max=3):
         return urand_max(t, tn, t1, r_new, r_max)
 
 
-def partition(t1):
+def partition(n):
     """Get list of urand_max for all numbers in a range.
     """
-    return [urand_max(x, 1, 3) for x in range(1, t1)]
+    return [urand_max(x, 1, 3) for x in range(1, n)]
 
 
 print(urand_max(1, 1, 3))
