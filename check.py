@@ -48,7 +48,7 @@ def inject_random_num(num):
     """
     fake_random = FakeURandom()
     random._urandom = fake_random.urandom
-    fake_random.byte_vals = num_to_bytes(num)
+    fake_random.bytes_list = num_to_bytes(num)
     return fake_random
 
 
