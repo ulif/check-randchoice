@@ -73,11 +73,17 @@ def partition(n):
     """
     return [urand_max(x, 1, 3) for x in range(1, n + 1)]
 
+def distribution(n):
+    r_lower = -1
+    result = []
+    for p in partition(n):
+        result.append(p - r_lower)
+        r_lower = p
+    return result
 
-print(urand_max(1, 1, 3))
-print(urand_max(2, 1, 3))
 
 print(partition(3))
+print(distribution(3))
 
 print("range '1': ", 24019198012642647 + 1)
 print("range '2': ", 48038396025285287 - 24019198012642647)
