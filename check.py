@@ -52,12 +52,13 @@ def inject_random_num(num):
     return fake_random
 
 
-def urand_max(t, t0, t1, r_min=URAND_MIN, r_max=URAND_MAX, dist_max=3):
+def urand_max(t, t0, t1, r_min=URAND_MIN, r_max=URAND_MAX + 1, dist_max=3):
     """Get max urandom number, for which `SystemRandom.choice()` returns `t`
 
     given, there is a choice from all integers in [`t0`...`t1`].
     """
-    if r_max == r_min + 1:
+    # if (r_max == r_min + 1) or (r_max < r_min):
+    if (r_max - r_min) < 2:
         return r_min
     r_new = r_min + ((r_max - r_min) / 2)
     fake_random.bytes_list = num_to_bytes(r_new)
