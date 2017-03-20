@@ -57,7 +57,6 @@ def urand_max(t, t0, t1, r_min=URAND_MIN, r_max=URAND_MAX + 1, dist_max=3):
 
     given, there is a choice from all integers in [`t0`...`t1`].
     """
-    # if (r_max == r_min + 1) or (r_max < r_min):
     if (r_max - r_min) < 2:
         return r_min
     r_new = r_min + ((r_max - r_min) / 2)
