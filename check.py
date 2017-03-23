@@ -63,15 +63,15 @@ def urand_max(t, t0, t1, r_min=URAND_MIN, r_max=URAND_MAX + 1, dist_max=3):
     inject_random_num(r_new)
     tn = random.SystemRandom().choice(range(1, dist_max + 1))
     if tn > t0 and tn > t:
-        return urand_max(t, t0, tn, r_min, r_new)
+        return urand_max(t, t0, tn, r_min, r_new, dist_max=dist_max)
     else:
-        return urand_max(t, tn, t1, r_new, r_max)
+        return urand_max(t, tn, t1, r_new, r_max, dist_max=dist_max)
 
 
 def partition(n):
     """Get list of urand_max for all numbers in a range.
     """
-    return [urand_max(x, 1, 3) for x in range(1, n + 1)]
+    return [urand_max(x, 1, n + 1, dist_max=n) for x in range(1, n + 1)]
 
 def distribution(n):
     r_lower = -1
