@@ -73,6 +73,7 @@ def partition(n):
     """
     return [urand_max(x, 1, n + 1, dist_max=n) for x in range(1, n + 1)]
 
+
 def distribution(n):
     r_lower = -1
     result = []
