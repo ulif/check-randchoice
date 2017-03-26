@@ -85,9 +85,3 @@ def distribution(n):
 
 print(partition(3))
 print(distribution(3))
-
-r1 = 24019198012642647 + 1
-r2 = 48038396025285287 - 24019198012642647
-r3 = 2**56 - 1 - 48038396025285287
-print(2**56)
-print(r1 + r2 + r3)
