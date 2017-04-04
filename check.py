@@ -82,6 +82,11 @@ def distribution(n):
         r_lower = p
     return result
 
+N = 3
 
-print(partition(3))
-print(distribution(3))
+print(partition(N))
+dist = distribution(N)
+
+print(dist)
+assert sum(dist) == 2 ** 56
+
