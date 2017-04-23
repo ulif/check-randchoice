@@ -82,6 +82,13 @@ def distribution(n):
         r_lower = p
     return result
 
+
+def min_max_diff(distribution):
+    d_min = min(distribution)
+    d_max = max(distribution)
+    return d_max - d_min
+
+
 N = 3
 
 print(partition(N))
@@ -90,3 +97,4 @@ dist = distribution(N)
 print(dist)
 assert sum(dist) == 2 ** 56
 
+print("Extremes: %s" % min_max_diff(dist))
