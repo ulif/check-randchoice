@@ -4,7 +4,7 @@ import sys
 
 
 # This script checks Python2.7 only!
-assert sys.version_info.major, sys.version_info.minor == (2, 7)
+assert sys.version.startswith("2.7")
 
 
 # The python 2.7.x SystemRandom.choice() function asks for 8 bytes from
