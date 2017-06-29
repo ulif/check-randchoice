@@ -6,3 +6,12 @@ equal.
 
 This script helps to determine the deviations from strict distributions
 experimentally.
+
+## background
+
+In fact `random.choice()` picks values by mapping a random number generated
+from several bytes to one of the values given. But even if these bytes are
+completely random, their possible values cannot be distributed equally over all
+values of all sequences.
+
+For instance we cannot distribute 256 values (1 byte) over 3-item sequences.
