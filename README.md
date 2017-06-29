@@ -7,11 +7,15 @@ equal.
 This script helps to determine the deviations from strict distributions
 experimentally.
 
+It works for Python version 2.7 only! In Python 3.x the problem is fixed.
+
+
 ## background
 
 In fact `random.choice()` picks values by mapping a random number generated
-from several bytes to one of the values given. But even if these bytes are
-completely random, their possible values cannot be distributed equally over all
-values of all sequences.
+from several bytes to one of the values given in a sequence. But even if these
+bytes are completely random, their possible values cannot be distributed
+equally over all values of all sequences.
 
 For instance we cannot distribute 256 values (1 byte) over 3-item sequences.
+
