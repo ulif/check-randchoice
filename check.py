@@ -97,4 +97,8 @@ dist = distribution(N)
 print(dist)
 assert sum(dist) == 2 ** 56
 
-print("Extremes: %s" % min_max_diff(dist))
+
+for n in [2, 3, 4, 5, 6]:
+    dist = distribution(n)
+    print("n=%i: min_max_diff: %i, dists: %r" % (n,min_max_diff(dist), dist))
+    assert sum(dist) == 2 ** 56
