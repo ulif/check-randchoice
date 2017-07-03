@@ -100,5 +100,5 @@ assert sum(dist) == 2 ** 56
 
 for n in [2, 3, 4, 5, 6]:
     dist = distribution(n)
-    print("n=%i: min_max_diff: %i, dists: %r" % (n,min_max_diff(dist), dist))
+    print("n=%i: min_max_diff: %i, dists: %r" % (n, min_max_diff(dist), dist))
     assert sum(dist) == 2 ** 56
