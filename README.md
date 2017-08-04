@@ -41,6 +41,18 @@ compared to others. The exact amount of this difference is computed with the.
 
 ## results
 
+Running ``check.py`` with Python 2,7 we get:
+
+    n=2: min_max_diff: 0, dists: [36028797018963968, 36028797018963968]
+    n=3: min_max_diff: 8, dists: [24019198012642648, 24019198012642640, 24019198012642648]
+    ...
+
+That means: for n=2 elements we get a fair distribution of 2^55 'hits' for
+each of the both values, summing up to 2^56.
+
+For n=3 elements, however, we get not an equal distribution. The second element
+was picked 8 times less than the first and last element.
+
 
 ## conclusions
 
